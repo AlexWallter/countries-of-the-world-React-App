@@ -1,0 +1,80 @@
+:root {
+  --background-clr: hsl(0, 0%, 96%);
+  --background-comp: hsl(0, 0%, 100%);
+  --font-crl: hsl(0, 0%, 0%);
+  --boxShadow-crl: rgba(133, 133, 133, .2);
+  --loading-crl: hsl(0, 0%, 80%);
+
+  /* font-sizes */
+  --fs-small: .875rem;
+  --fs-normal: 1rem;
+}
+
+:root .dark {
+  --background-clr: hsl(207, 26%, 17%);
+  --background-comp: hsl(209, 23%, 22%);
+  --font-crl: hsl(0, 0%, 96%);
+  --boxShadow-crl: rgba(17, 21, 23, .2);
+  --loading-crl:hsl(209, 23%, 30%);
+
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+#root {
+  background-color: var(--background-clr);
+  color: var(--font-crl);
+  display: grid;
+  min-height: 100svh;
+}
+
+/*----- RESET-----*/
+
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+select {
+    font-family: inherit;
+}
+
+button {
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*----- UTILITY CLASSES-----*/
+
+.flex {
+  display: flex;
+}
+
+.semi-bold-font {
+  font-weight: 600;
+}
+
+.bold-font {
+  font-weight: 800;
+}
