@@ -57,7 +57,8 @@ export default function Home() {
         population = {e.population}
         region = {e.region}
         capital = {e.capital}
-        key={e.name.official}/>
+        key={e.name.official}
+        id={e.cca3}/>
     )
     })
 
@@ -68,7 +69,8 @@ export default function Home() {
             population = {e.population}
             region = {e.region}
             capital = {e.capital}
-            key={e.name.official}/>
+            key={e.name.official}
+            id={e.cca3}/>
         )
     })
 
@@ -78,14 +80,15 @@ export default function Home() {
                  name = {e.name.common}
                  population = {e.population}
                  region = {e.region}
-                 capital = {e.capital[0]}
-                 key={e.name.official}/>
+                 capital = {e.capital}
+                 key={e.name.official}
+                 id={e.cca3}/>
       )
     })
     
     return isLoading ?  (
         <div className='loading-all'>
-            <Loading/>
+             {error ?(<p>We hed some problems.Please, try again later</p>): <Loading/>}
         </div>
     ): (
         <>

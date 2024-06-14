@@ -16,7 +16,8 @@
 
 .mode-switch::before,
 .searcher::before,
-.searcher__region-filter::after {
+.searcher__region-filter::after,
+.detail-page--Back-btn::before {
     display: inline-block;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -102,6 +103,7 @@
     box-shadow:  6px 6px 5px 0px var(--boxShadow-crl);
     background-color: var(--background-comp);
     margin-left: 1.25rem;
+    z-index: 3;
 }
 
 .searcher__region-filter:hover {
@@ -141,8 +143,6 @@
 }
 
 .country-card {
-
-
     margin-bottom: 2em;
     justify-self: center;
     border-radius: 5px;
@@ -246,9 +246,199 @@
         column-gap: 4rem;
         padding-inline: 4rem;
     }
-    
+
+    .country-card {
+        transition:transform .3s;
+    }
+
+    .country-card:hover {
+        transform: scale(1.1);
+        box-shadow: 6px 6px 5px 3px var(--boxShadow-animation-crl);
+    }
+
     .country-card img {
-        justify-self: center;
-        max-height: 11rem;
+        background-color: var(--loading-crl);
+        backdrop-filter: blur(2rem);
+        width: 320px;
+        height: 160px;
+    }
+}
+
+/*----- Details Page-----*/
+
+.detail-page {
+    display: grid;
+    padding: 2em 1.5em 4em 1.5em;
+    row-gap: 4em;
+}
+
+.detail-page--Back-btn {
+    max-width: 7rem;
+    position: relative;
+    background-color: var(--background-comp); 
+    padding:.5em 2.5em;
+    border-radius: 3px;
+    box-shadow:  3px 4px 3px 0px var(--boxShadow-crl);
+    transition: .25s;
+}
+
+.detail-page--Back-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 5px 4px 2px  var(--boxShadow-animation-crl);
+}
+
+.detail-page--Back-btn:hover:active {
+    transform: scale(1);
+    box-shadow: 3px 4px 3px 0px  var(--boxShadow-animation-crl);
+
+}
+
+.detail-page--Back-btn::before {
+    content: '\f060';
+    font-weight: 900;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+
+.detail-page__flag {
+    display: grid;
+    place-items: center;
+    width: min(100%, 90vw);
+}
+
+.detail-page__flag img {
+    aspect-ratio: 1/.70;
+}
+
+.detail-page__container {
+    display: grid;
+    row-gap: 2em;
+}
+
+.detail-page__container p:is(:not(:first-child)) {
+    margin-top: 1em;
+}
+
+.detail-page__container span {
+    font-weight: 400;
+    margin-left: .25em;
+    color: var(--font-clr-info);
+}
+
+.border-container {
+    max-width: 30rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.border-container p{
+    margin-bottom: 1em;
+}
+
+.border-btns a{
+    padding:.2em 1.5em ;
+    background-color: var(--background-comp); 
+    border-radius: 1px;
+}
+
+.border-btns a:is(:not(:first-child)) {
+    margin-left: .4em;
+}
+
+@media (max-width: 63em) and (min-width: 35em) {
+    .detail-page {
+        padding-inline: 4em;
+        grid-template-areas: 
+        'backBtn'
+        'flagImg'
+        'informationGrid';
+        grid-template-columns: 1fr;
+        grid-template-rows: .1fr 1fr 2fr;
+    }
+
+    .detail-page--Back-btn {
+        grid-area: backBtn;
+    }
+
+    .detail-page__flag{
+        grid-area: flagImg;
+    }
+
+    .detail-page__flag img {
+        max-width: 70%;
+    }
+
+    .detail-page__container {
+        grid-area: informationGrid;
+        grid-template-areas:
+        'info2 info3'
+        'border2 border2';
+        grid-auto-rows: .5fr;
+        row-gap: 0;
+    }
+    
+    .detail-page__information {
+        grid-area: info2;
+    }
+    
+    .detail-page__more-information {
+        grid-area: info3;
+        margin-top: 3.5rem;
+    }
+
+    .border-container {
+        grid-area: border2;
+    }
+}
+
+@media (min-width: 64em) {
+    .detail-page {
+        grid-template-areas: 
+        'back . .'
+        'flag flag info'
+        'flag flag borders'
+        '. . .';
+        grid-auto-columns: .2fr .2fr .6fr;
+        column-gap: 5em;
+        padding-top: 0;
+        padding-inline: 1.5em;
+    }
+
+    .detail-page--Back-btn {
+        grid-area: back;
+    }
+
+    .detail-page__flag img {
+        max-width: 100%;
+    }
+
+    .detail-page__flag {
+        grid-area: flag;
+
+    }
+ 
+    .country-name {
+        font-size: 2rem;
+    }
+
+    .detail-page__container {
+        grid-area: info;
+        grid-template-areas:
+        'info2 info3'
+        'border2 border2';
+        }
+    
+    .detail-page__information {
+        grid-area: info2;
+    }
+    
+    .detail-page__more-information {
+        grid-area: info3;
+        margin-top: 3.5rem;
+    }
+
+    .border-container {
+        grid-area: border2;
     }
 }

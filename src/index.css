@@ -1,8 +1,10 @@
 :root {
   --background-clr: hsl(0, 0%, 96%);
   --background-comp: hsl(0, 0%, 100%);
-  --font-crl: hsl(0, 0%, 0%);
+  --font-crl: rgba(0, 0, 0);
+  --font-clr-info:hsla(0 0% 0%);
   --boxShadow-crl: rgba(133, 133, 133, .2);
+  --boxShadow-animation-crl: rgba(133, 133, 133, .4);
   --loading-crl: hsl(0, 0%, 80%);
 
   /* font-sizes */
@@ -14,9 +16,10 @@
   --background-clr: hsl(207, 26%, 17%);
   --background-comp: hsl(209, 23%, 22%);
   --font-crl: hsl(0, 0%, 96%);
-  --boxShadow-crl: rgba(17, 21, 23, .2);
+  --font-clr-info: rgba(255, 255, 255, 0.8);
+  --boxShadow-crl: rgba(17, 21, 23, .3);
+  --boxShadow-animation-crl: rgba(17, 21, 23, .4);
   --loading-crl:hsl(209, 23%, 30%);
-
 }
 
 body {
@@ -27,6 +30,7 @@ body {
   background-color: var(--background-clr);
   color: var(--font-crl);
   min-height: 100svh;
+  overflow: hidden;
 }
 
 /*----- RESET-----*/

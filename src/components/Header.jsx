@@ -16,7 +16,7 @@ export default function Header() {
     return(
         <>
         <header className="page-header">
-            <p className="bold-font">where in the world?</p>
+            <a className="bold-font" href="/">where in the world?</a>
             <p className="semi-bold-font mode-switch"
                onClick={()=>theme()}>Dark Mode</p>
         </header>
