@@ -143,12 +143,19 @@
 }
 
 .country-card {
+    width: 100%;
     margin-bottom: 2em;
     justify-self: center;
     border-radius: 5px;
     box-shadow: 6px 6px 5px 0px var(--boxShadow-crl);
     background-color: var(--background-comp);
     overflow: hidden;
+}
+
+.country-card img{
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .country-card__detail {
@@ -248,7 +255,8 @@
     }
 
     .country-card {
-        transition:transform .3s;
+        transition: transform .3s;
+        width: 15rem;
     }
 
     .country-card:hover {
@@ -259,8 +267,7 @@
     .country-card img {
         background-color: var(--loading-crl);
         backdrop-filter: blur(2rem);
-        width: 320px;
-        height: 160px;
+        height: 152px;
     }
 }
 
@@ -328,8 +335,11 @@
 
 .border-container {
     max-width: 30rem;
-    overflow-x: auto;
-    overflow-y: hidden;
+}
+
+.border-btns {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .border-container p{
@@ -337,13 +347,15 @@
 }
 
 .border-btns a{
-    padding:.2em 1.5em ;
+    padding:.2em 1.5em;
+    margin:.4em 0 0 .4em;
     background-color: var(--background-comp); 
     border-radius: 1px;
+    transition: .2s;
 }
 
-.border-btns a:is(:not(:first-child)) {
-    margin-left: .4em;
+.border-btns a:hover {
+    background-color: var(--background-animated-comp);
 }
 
 @media (max-width: 63em) and (min-width: 35em) {

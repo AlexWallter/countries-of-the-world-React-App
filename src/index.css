@@ -1,6 +1,7 @@
 :root {
   --background-clr: hsl(0, 0%, 96%);
   --background-comp: hsl(0, 0%, 100%);
+  --background-animated-comp: hsl(0, 0%, 80%);
   --font-crl: rgba(0, 0, 0);
   --font-clr-info:hsla(0 0% 0%);
   --boxShadow-crl: rgba(133, 133, 133, .2);
@@ -15,6 +16,7 @@
 :root .dark {
   --background-clr: hsl(207, 26%, 17%);
   --background-comp: hsl(209, 23%, 22%);
+  --background-animated-comp: hsl(209, 23%, 30%);
   --font-crl: hsl(0, 0%, 96%);
   --font-clr-info: rgba(255, 255, 255, 0.8);
   --boxShadow-crl: rgba(17, 21, 23, .3);
