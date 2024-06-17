@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function Header() {
     const [darkTheme, setDarkTheme] = useState(false)
@@ -16,7 +17,7 @@ export default function Header() {
     return(
         <>
         <header className="page-header">
-            <a className="bold-font" href="/">where in the world?</a>
+            <Link className="bold-font" to={"/countries-of-the-world-React-App"}>where in the world?</Link>
             <p className="semi-bold-font mode-switch"
                onClick={()=>theme()}>Dark Mode</p>
         </header>

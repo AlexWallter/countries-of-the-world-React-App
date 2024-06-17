@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
       <Header/>
       <Routes>
-        <Route path='/' element= {<Home/>}/>
+        <Route path='/countries-of-the-world-React-App' element= {<Home/>}/>
         <Route path='/Details/:id' element= {<DetailsPage/>}/>
       </Routes>
     </BrowserRouter>

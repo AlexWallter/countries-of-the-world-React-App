@@ -55,7 +55,7 @@ export default function DetailsPage() {
     return  !isLoading && errors.length == 0 ? (
         <>
         <main className="detail-page">
-        <Link className="detail-page--Back-btn" to={'/'}>
+        <Link className="detail-page--Back-btn" to={'/countries-of-the-world-React-App'}>
         Back
         </Link>
         <div className="detail-page__flag">
